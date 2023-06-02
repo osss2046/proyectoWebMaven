@@ -1,0 +1,333 @@
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding: 4vh;
+    
+}
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction:column;
+    font-family: "Menlo",monospace;
+    background: linear-gradient(to bottom, rgb(128, 128, 128) 0%, rgb(0, 0, 0) 100%);
+    color: white;
+    text-shadow: 1px 1px 1px gray;
+    
+}
+
+nav	{
+	height: 4vh;
+	text-align: center;
+    background-color:black;
+    position: fixed;
+    align-self: center;
+    display: flex;
+    visibility: visible;
+}
+ul{
+	margin-top: 1vh;
+    padding-left:0;
+}
+
+li{
+    
+	display: inline;
+	padding: 1vh 6vw 1vh;
+    text-shadow: 1px 1px 1px yellow;
+    transition: all .2s linear;
+}
+
+li:hover{
+    color: white;
+    background-color: rgb(128, 128, 128); 
+    padding: 1vh 9vw 1vh;
+    text-shadow: 4px 4px 4px yellow;
+
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.8vh;
+}
+.titulo{
+    text-align: center;
+    color: black;
+}
+.presentacion{
+    text-align: center;
+    color: black;
+}
+
+.seccion1{
+    border-radius: 12vh;
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(180, 180, 180)100%);
+}
+
+
+.seccion2{
+    align-self: center;
+    margin: 0;
+    width: 80vw;
+    height: 55vh;
+
+
+}
+#bloque1{
+    float: left;
+    width:40vw;
+    height: 45vh;
+
+    
+}
+#bloque2{
+
+    float: right;
+    width:40vw;
+    height: 45vh;
+    
+}
+h2{
+    
+    text-align: center;
+    
+}
+.seccion4{
+    margin: 0;
+    align-self: center;
+    height: 55vh; 
+    width:80vw;  
+}
+
+
+#galeria{
+	display: flex;
+    margin: 0;
+	height: 45vh;
+	/* fijamos un tamaño para las imagenes que apareceran en el inicio */
+}
+#galeria img{
+	width: 0;
+	flex-grow: .5;
+	object-fit: cover;
+	transition: .8s;
+	/* configuramos el diseño de las imagenes que apareceran en el inicio */
+}
+#galeria img:hover{
+	width: 10%;
+	/* hacemos que las imagenes sean interactivas con el cursor */
+}
+
+.seccion7{
+    align-self: center;
+}
+.letra{
+    text-align: center;
+
+}
+.seccion8{
+    margin: 0 14vw 0;
+    align-self: center;
+    align-content: center;
+    
+}
+#letraUbi{
+    
+    text-align: center;
+    margin-top: 5vh;
+}
+input[type="submit"]{
+	background: blue;
+	border: thin solid transparent;
+	border-radius: .5em;
+	color: #fff;
+	cursor: pointer;
+	font-size: 1.3em;
+}
+input[type="submit"]:hover{
+	background: skyblue;
+	border: thin solid #fff;
+	border-radius: 0.3em;
+	color: gray;
+}
+input[type="button"]{
+	background: blue;
+	border: thin solid transparent;
+	border-radius: .5em;
+	color: #fff;
+	cursor: pointer;
+	font-size: 1.3em;
+}
+input[type="button"]:hover{
+	background: skyblue;
+	border: thin solid #fff;
+	border-radius: 0.3em;
+	color: gray;
+}
+
+.button{
+
+    margin: 2%;
+	background: blue;
+	border: thin solid transparent;
+	border-radius: 2vh;
+	color: #fff;
+	cursor: pointer;
+	font-size: 2vw;
+    
+}
+.button:hover{
+    background: skyblue;
+	border: thin solid #fff;
+	border-radius: 0.3em;
+	color: gray;
+}
+
+
+fieldset{
+    border: none;
+}
+#img_ubi{
+    align-self: center;
+	border: 5px solid gray;
+	background-image: url("../img/ub.png");
+    background-size: cover;
+	height: 25vh;
+    
+}
+
+table{
+	text-align: center;
+	height: 30vh;
+	margin:0;
+}
+
+#nombre{
+	height:3vh;
+    width:35vw;
+}
+#email{
+    
+	height:3vh;
+    width:35vw;
+}
+#comentario{
+	height:20vh;
+	width:35vw;
+}
+
+
+
+
+
+footer{
+    padding-top: 10vh;
+    text-align: center;
+    margin-top: 0;
+    min-width: 100%;
+    height: 5vh;
+    
+}
+.cajapie{
+    float: left;
+
+  
+    
+}
+.container-clock{
+	text-shadow: 0 0 10px rgb(230,171,10), 0 0 10px rgb(255,255,22);
+}
+p{
+    align-content: center;
+	letter-spacing: 0.1em;
+	font-size:1em;
+    margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+    nav	{
+        padding: 0 2vw 0;
+    }
+    .cajapie{
+        margin-left:10vw;
+    }
+    li{
+        padding: 1vh 0.5vw 1vh;
+    }
+    li:hover{
+        padding: 1vh 3vw 1vh;
+    }
+    .seccion1{
+        margin: 10vh 5vw 5vh;
+        height:37vh;
+    }
+    .titulo{
+        margin-top: 5vh;
+    }
+    .botonera{
+        margin: 7vh 30vw 0;
+    }
+    h2{
+        font-size: 1.2vh;
+    }
+
+    #img_ubi{
+        width:70vw;
+    }
+    .letra{
+        font-size: 2.5vh;
+        margin-bottom: 3vh;
+    }
+    .seccion7{
+        margin: 20vh 10vw 5vh;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    nav	{
+        padding: 0 6vw 0;
+    }
+    .seccion1{
+        margin: 10vh 5vw 5vh;
+        height:37vh;
+    }
+    .cajapie{
+        margin-left:20vw;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .cajapie{
+        margin-left:30vw;
+    }
+    nav	{
+        padding: 0 11vw 0;
+    }
+    .seccion1{
+        margin: 22vh;
+        height: 55vh;
+    }
+    .titulo{
+        font-size: 5vh;
+
+    }
+    .presentacion{
+        font-size: 4vh;
+    }
+    .botonera{
+        margin: 7vh 23vw 0;
+    }
+    h2{
+        font-size: 2vh;
+    }
+    #img_ubi{
+        width:40vw;
+    }
+    .letra{
+        font-size: 4vh;
+    }
+    .seccion7{
+        margin: 20vh 28vw 5vh;
+    }
+}
