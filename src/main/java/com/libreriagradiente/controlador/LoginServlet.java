@@ -46,22 +46,55 @@ public class LoginServlet extends HttpServlet {
         
         HttpSession session = request.getSession();
         String signin = request.getParameter("signin");
-        if(signin.equalsIgnoreCase("IniciarSesion")){
+        if(signin.equals("IniciarSesion")){
+           
+            
+           
             String uemail=request.getParameter("username");
             String uppassword=request.getParameter("password"); 
-            us=udao.validar(uemail, uppassword);
-            if(us.getEmail()!=null){
-                session.setAttribute("email", us.getEmail());
-                request.setAttribute("nom", us);
-                request.getRequestDispatcher("Controlador?signin=protegido").forward(request, response);
-        
-            }else{
-              
-            request.getRequestDispatcher("login.jsp").forward(request, response);
             
-        }
+            us=udao.verificar(uemail, uppassword);
+            if(us.getEmail()!=null && us.getPasswordU()!=null && us.getRol().getNombre().equals("ADMINISTRADOR")){
+                session.setAttribute("email",us.getEmail());
+                request.setAttribute("nomadm",us);
+                request.getRequestDispatcher("Controlador?signin=Admin").forward(request, response);
+            }else if(us.getEmail()!=null && us.getPasswordU()!=null && us.getRol().getNombre().equals("USUARIO")){
+                session.setAttribute("email",us.getEmail());
+                request.setAttribute("nomusu",us);
+                request.getRequestDispatcher("Controlador?signin=usua").forward(request, response);
+            }else{
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            }
+            
+            
+           
         
-    }else{}}
+    }
+        if(signin.equals("Registrarse")){
+                String nombreUsuario = request.getParameter("name");
+		String password = request.getParameter("pass");
+		String password2 = request.getParameter("re_pass");
+                
+		String email = request.getParameter("email");
+                us.setNombreU(nombreUsuario);
+                us.setPasswordU(password);
+                us.setEmail(email);
+                
+  
+                
+                
+                if(nombreUsuario!="" && password!="" && email!="" && password.equals(password2)){
+                    udao.Registrar(us);
+                    request.getRequestDispatcher("principal.jsp").forward(request,response);
+                    
+                }else{
+                request.getRequestDispatcher("Registration.jsp").forward(request,response);
+                }
+    }
+    
+    
+    
+    }
 
     
     

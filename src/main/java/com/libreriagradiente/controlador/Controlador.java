@@ -27,9 +27,14 @@ public class Controlador extends HttpServlet {
         String signin = request.getParameter("signin");
         String accion=request.getParameter("accion");
         
-        if(signin.equals("protegido")){
+        if(signin.equals("usua")){
+           
             request.getRequestDispatcher("principal.jsp").forward(request,response);
         }
+        if(signin.equals("Admin")){
+            request.getRequestDispatcher("principal2.jsp").forward(request,response);
+        }
+        
         
         if(signin.equals("MiLibreria")){
             switch(accion){
@@ -54,7 +59,7 @@ public class Controlador extends HttpServlet {
                     li.setEditorial(edit);
                     li.setTema(tema);
                     li.setIdiomaLibro(idioma);
-                    li.setIdAutor(idau);
+   //                 li.setAutor(idau);
                     ldao.agregar(li);
                     
                    request.getRequestDispatcher("Controlador?signin=MiLibreria&accion=Listar").forward(request, response);
@@ -76,7 +81,7 @@ public class Controlador extends HttpServlet {
                     li.setEditorial(edit1);
                     li.setTema(tema1);
                     li.setIdiomaLibro(idioma1);
-                    li.setIdAutor(idau1);
+  //                  li.setIdAutor(idau1);
                     li.setId(idl);
                     ldao.actualizar(li);
                   
@@ -94,6 +99,9 @@ public class Controlador extends HttpServlet {
                 
             }
             request.getRequestDispatcher("MiLibreria.jsp").forward(request,response);
+        }
+        if(signin.equals("Perfil")){
+            request.getRequestDispatcher("Perfil.jsp").forward(request,response);
         }
         if(signin.equals("BuscarLibro")){
             request.getRequestDispatcher("BuscarLibro.jsp").forward(request,response);

@@ -16,6 +16,20 @@ body{
     
 }
 
+.navbar {
+    padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+    font-size: 1.25rem;
+    margin-right: 1rem;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+
 nav	{
 	height: 4vh;
 	text-align: center;

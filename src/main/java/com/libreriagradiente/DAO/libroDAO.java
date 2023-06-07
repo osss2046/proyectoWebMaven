@@ -37,7 +37,7 @@ public class libroDAO {
 //operaciones CRUD
     
     public List listar(){
-        String sql="select * from libro";
+        String sql="select * from libro order by nombreLibro";
         List<libro>lista=new ArrayList<>();
         try{
             con=cn.Conexion();
@@ -50,7 +50,7 @@ public class libroDAO {
                 lib.setEditorial(rs.getString(3));
                 lib.setTema(rs.getString(4));
                 lib.setIdiomaLibro(rs.getString(5));
-                lib.setIdAutor(rs.getString(6));
+          //      lib.setIdAutor(rs.getString(6));
                 lista.add(lib);
             }
         }catch(Exception e){
@@ -64,7 +64,7 @@ public class libroDAO {
         String sql="insert into libro(nombreLibro, Editorial, tema, idiomaLibro, idAutor) value(?,?,?,?,?)";
         
         System.out.println("Sql: "+sql);
-        System.out.println("nombre libro "+lib.getNombrelibro()+" "+lib.getEditorial()+" "+lib.getIdAutor()+" "+lib.getIdiomaLibro()+" "+lib.getTema());
+        System.out.println("nombre libro "+lib.getNombrelibro()+" "+lib.getEditorial()+" "+lib.getAutor()+" "+lib.getIdiomaLibro()+" "+lib.getTema());
         try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
@@ -74,7 +74,7 @@ public class libroDAO {
             ps.setString(2,lib.getEditorial());
             ps.setString(3,lib.getTema());
             ps.setString(4,lib.getIdiomaLibro());
-            ps.setString(5,lib.getIdAutor());
+      //      ps.setString(5,lib.getAutor());
             ps.executeUpdate();
 
             
@@ -96,7 +96,7 @@ public class libroDAO {
                 li.setEditorial(rs.getString(3));
                 li.setTema(rs.getString(4));
                 li.setIdiomaLibro(rs.getString(5));
-                li.setIdAutor(rs.getString(6));
+            //    li.setAutor(rs.getString(6));
             }
         }catch(Exception e){
             
@@ -113,7 +113,7 @@ public class libroDAO {
             ps.setString(2,lib.getEditorial());
             ps.setString(3,lib.getTema());
             ps.setString(4,lib.getIdiomaLibro());
-            ps.setString(5,lib.getIdAutor());
+          //  ps.setString(5,lib.getIdAutor());
             ps.setInt(6,lib.getId());
             ps.executeUpdate();
         }catch(Exception e){

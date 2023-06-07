@@ -28,7 +28,7 @@
 					<div class="signup-form">
 						<h2 class="form-title">Crear Sesión</h2>
 					
-						<form method="POST" action="RegistroServlet" class="register-form"
+						<form method="POST" action="LoginServlet" class="register-form"
 							id="register-form">
 							<div class="form-group">
 								<label for="name"><i
@@ -49,7 +49,7 @@
 									placeholder="Repita su contraseña" />
 							</div>
 							<div class="form-group form-button">
-								<input type="submit" name="signup" id="signup"
+								<input type="submit" name="signin" id="signup"
 									class="form-submit" value="Registrarse" />
 							</div>
 						</form>

@@ -15,19 +15,19 @@ public class libro {
     String tema;
     String idiomaLibro;
     int numModulo;
-    String idAutor;
+    autor autor;
 
     public libro() {
     }
 
-    public libro(int id, String nombrelibro, String Editorial, String tema, String idiomaLibro, int numModulo, String idAutor) {
+    public libro(int id, String nombrelibro, String Editorial, String tema, String idiomaLibro, int numModulo, autor autor) {
         this.id = id;
         this.nombrelibro = nombrelibro;
         this.Editorial = Editorial;
         this.tema = tema;
         this.idiomaLibro = idiomaLibro;
         this.numModulo = numModulo;
-        this.idAutor = idAutor;
+        this.autor = autor;
     }
 
     public int getId() {
@@ -78,13 +78,12 @@ public class libro {
         this.numModulo = numModulo;
     }
 
-    public String getIdAutor() {
-        return idAutor;
+    public autor getAutor() {
+        return autor;
     }
 
-    public void setIdAutor(String idAutor) {
-        this.idAutor = idAutor;
+    public void setAutor(autor autor) {
+        this.autor = autor;
     }
 
-    
 }

@@ -14,18 +14,18 @@ public class perfil {
     String preferenciasDeLec;
     String GenerosFav;
     String descripcionU;
-    int idUsuario;
+    usuarios usuario;
 
     public perfil() {
     }
 
-    public perfil(int id, int nickname, String preferenciasDeLec, String GenerosFav, String descripcionU, int idUsuario) {
+    public perfil(int id, int nickname, String preferenciasDeLec, String GenerosFav, String descripcionU, usuarios usuario) {
         this.id = id;
         this.nickname = nickname;
         this.preferenciasDeLec = preferenciasDeLec;
         this.GenerosFav = GenerosFav;
         this.descripcionU = descripcionU;
-        this.idUsuario = idUsuario;
+        this.usuario = usuario;
     }
 
     public int getId() {
@@ -68,13 +68,14 @@ public class perfil {
         this.descripcionU = descripcionU;
     }
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public usuarios getUsuario() {
+        return usuario;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setUsuario(usuarios usuario) {
+        this.usuario = usuario;
     }
+
     
     
 }

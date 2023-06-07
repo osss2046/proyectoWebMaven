@@ -13,17 +13,18 @@ public class usuarios {
     String nombreU;
     String passwordU;
     String email;
-    int idRol;
+    rol rol;
+    
 
     public usuarios() {
     }
 
-    public usuarios(int id, String nombreU, String passwordU, String email, int idRol) {
+    public usuarios(int id, String nombreU, String passwordU, String email, rol rol) {
         this.id = id;
         this.nombreU = nombreU;
         this.passwordU = passwordU;
         this.email = email;
-        this.idRol = idRol;
+        this.rol = rol;
     }
 
     public int getId() {
@@ -58,12 +59,12 @@ public class usuarios {
         this.email = email;
     }
 
-    public int getIdRol() {
-        return idRol;
+    public rol getRol() {
+        return rol;
     }
 
-    public void setIdRol(int idRol) {
-        this.idRol = idRol;
+    public void setRol(rol rol) {
+        this.rol = rol;
     }
     
     
