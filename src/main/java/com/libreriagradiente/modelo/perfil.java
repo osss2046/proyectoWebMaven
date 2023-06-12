@@ -4,28 +4,34 @@
  */
 package com.libreriagradiente.modelo;
 
+import java.io.InputStream;
+
 /**
  *
  * @author Oscar
  */
 public class perfil {
     int id;
-    int nickname;
+    String nickname;
     String preferenciasDeLec;
     String GenerosFav;
     String descripcionU;
     usuarios usuario;
+    InputStream foto;
+    int meta;
 
     public perfil() {
     }
 
-    public perfil(int id, int nickname, String preferenciasDeLec, String GenerosFav, String descripcionU, usuarios usuario) {
+    public perfil(int id, String nickname, String preferenciasDeLec, String GenerosFav, String descripcionU, usuarios usuario, InputStream foto, int meta) {
         this.id = id;
         this.nickname = nickname;
         this.preferenciasDeLec = preferenciasDeLec;
         this.GenerosFav = GenerosFav;
         this.descripcionU = descripcionU;
         this.usuario = usuario;
+        this.foto = foto;
+        this.meta = meta;
     }
 
     public int getId() {
@@ -36,11 +42,11 @@ public class perfil {
         this.id = id;
     }
 
-    public int getNickname() {
+    public String getNickname() {
         return nickname;
     }
 
-    public void setNickname(int nickname) {
+    public void setNickname(String nickname) {
         this.nickname = nickname;
     }
 
@@ -76,6 +82,25 @@ public class perfil {
         this.usuario = usuario;
     }
 
+    public InputStream getFoto() {
+        return foto;
+    }
+
+    public void setFoto(InputStream foto) {
+        this.foto = foto;
+    }
+
+    public int getMeta() {
+        return meta;
+    }
+
+    public void setMeta(int meta) {
+        this.meta = meta;
+    }
+
+
+
+    
     
     
 }

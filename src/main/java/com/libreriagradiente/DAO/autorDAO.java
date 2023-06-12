@@ -39,7 +39,6 @@ public class autorDAO {
                 em.setNombreAutor(rs.getString(2));
                 em.setApellidosAutor(rs.getString(3));
                 em.setNacionalidad(rs.getString(4));
-                em.setAñoNacimiento(rs.getString(5));
                
                 lista.add(em);
             }

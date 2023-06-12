@@ -10,22 +10,26 @@ package com.libreriagradiente.modelo;
  */
 public class resena {
     int id;
-    String reseña;
-    int idLibro;
+    String resena;
     String fechaAgregada;
     int calificacionLibro;
-    int numModulo;
-
+    int idColeccion;
+    autor au;
+    libro lib;
+    perfil perfil;
+    
     public resena() {
     }
 
-    public resena(int id, String reseña, int idLibro, String fechaAgregada, int calificacionLibro, int numModulo) {
+    public resena(int id, String resena, String fechaAgregada, int calificacionLibro, int idColeccion, autor au, libro lib, perfil perfil) {
         this.id = id;
-        this.reseña = reseña;
-        this.idLibro = idLibro;
+        this.resena = resena;
         this.fechaAgregada = fechaAgregada;
         this.calificacionLibro = calificacionLibro;
-        this.numModulo = numModulo;
+        this.idColeccion = idColeccion;
+        this.au = au;
+        this.lib = lib;
+        this.perfil = perfil;
     }
 
     public int getId() {
@@ -36,20 +40,12 @@ public class resena {
         this.id = id;
     }
 
-    public String getReseña() {
-        return reseña;
+    public String getResena() {
+        return resena;
     }
 
-    public void setReseña(String reseña) {
-        this.reseña = reseña;
-    }
-
-    public int getIdLibro() {
-        return idLibro;
-    }
-
-    public void setIdLibro(int idLibro) {
-        this.idLibro = idLibro;
+    public void setResena(String resena) {
+        this.resena = resena;
     }
 
     public String getFechaAgregada() {
@@ -68,13 +64,39 @@ public class resena {
         this.calificacionLibro = calificacionLibro;
     }
 
-    public int getNumModulo() {
-        return numModulo;
+    public int getIdColeccion() {
+        return idColeccion;
     }
 
-    public void setNumModulo(int numModulo) {
-        this.numModulo = numModulo;
+    public void setIdColeccion(int idColeccion) {
+        this.idColeccion = idColeccion;
     }
+
+    public autor getAu() {
+        return au;
+    }
+
+    public void setAu(autor au) {
+        this.au = au;
+    }
+
+    public libro getLib() {
+        return lib;
+    }
+
+    public void setLib(libro lib) {
+        this.lib = lib;
+    }
+
+    public perfil getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(perfil perfil) {
+        this.perfil = perfil;
+    }
+
     
+
     
 }

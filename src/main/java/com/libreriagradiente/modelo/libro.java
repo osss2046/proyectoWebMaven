@@ -14,19 +14,23 @@ public class libro {
     String Editorial;
     String tema;
     String idiomaLibro;
-    int numModulo;
+    int estadoLectura;
+    String estale;
     autor autor;
+    
 
     public libro() {
+ 
     }
 
-    public libro(int id, String nombrelibro, String Editorial, String tema, String idiomaLibro, int numModulo, autor autor) {
+    public libro(int id, String nombrelibro, String Editorial, String tema, String idiomaLibro, int estadoLectura, String estale, autor autor) {
         this.id = id;
         this.nombrelibro = nombrelibro;
         this.Editorial = Editorial;
         this.tema = tema;
         this.idiomaLibro = idiomaLibro;
-        this.numModulo = numModulo;
+        this.estadoLectura = estadoLectura;
+        this.estale = estale;
         this.autor = autor;
     }
 
@@ -70,12 +74,20 @@ public class libro {
         this.idiomaLibro = idiomaLibro;
     }
 
-    public int getNumModulo() {
-        return numModulo;
+    public int getEstadoLectura() {
+        return estadoLectura;
     }
 
-    public void setNumModulo(int numModulo) {
-        this.numModulo = numModulo;
+    public void setEstadoLectura(int estadoLectura) {
+        this.estadoLectura = estadoLectura;
+    }
+
+    public String getEstale() {
+        return estale;
+    }
+
+    public void setEstale(String estale) {
+        this.estale = estale;
     }
 
     public autor getAutor() {

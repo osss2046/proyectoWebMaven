@@ -61,9 +61,6 @@
                 <a class="nav-link" href="#home">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#about">Acerca de</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="#bookstore">Librería</a>
             </li>
             <li class="nav-item">
@@ -81,7 +78,7 @@
     <div class="container my-5">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h1>Bienvenido a Librería Gradiente</h1>
+                <h1>Bienvenido a Gradiente</h1>
                 <p class="lead">Tu lugar favorito para administrar tus lecturas.</p>
                 <img src="img/fondo1.png" alt="libreria" class="img-fluid rounded-circle" style="height: 20vh;">
             </div>
@@ -91,7 +88,6 @@
 
 <div class="section" id="about">
     <div class="container">
-        <h2 class="mb-4">Bienvenido a Gradiente.</h2>
         <p class="mb-4">Te ayuda a administrar tus lecturas favoritas y crear una librería personalizada con tu lista de deseos.</p>
         <p class="mb-4">Gradiente tiene una extensa lista de títulos y además cuenta con reseñas de la comunidad.</p>
         <div class="text-center mt-4">
@@ -167,13 +163,10 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <h3 class="text-uppercase">Lorem ipsum dolor sit amet</h3>
-                <p class="text-muted">Consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <p><small class="text-muted">Sed posuere consectetur est at lobortis. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas faucibus mollis interdum.</small></p>
-                <h4 class="text-lowercase" style="font-family: monospace;">Donec ullamcorper nulla non metus</h4>
-                <p>Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur.</p>
-                <p class="text-danger">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                <p><mark>Cras mattis consectetur purus sit amet fermentum.</mark></p>
+                <h3 class="text-muted text-center">En esta caja de comentarios puedes contactarnos para hacer llegar tus impresiones
+                    <br> 
+                    o si deseas contactarnos por cualquier razón. </h3>
+  
             </div>
         </div>
     </div>
