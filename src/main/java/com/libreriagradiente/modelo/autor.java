@@ -13,17 +13,15 @@ public class autor {
     String nombreAutor;
     String ApellidosAutor;
     String Nacionalidad;
-    String añoNacimiento;
 
     public autor() {
     }
 
-    public autor(int id, String nombreAutor, String ApellidosAutor, String Nacionalidad, String añoNacimiento) {
+    public autor(int id, String nombreAutor, String ApellidosAutor, String Nacionalidad) {
         this.id = id;
         this.nombreAutor = nombreAutor;
         this.ApellidosAutor = ApellidosAutor;
         this.Nacionalidad = Nacionalidad;
-        this.añoNacimiento = añoNacimiento;
     }
 
     public int getId() {
@@ -58,14 +56,4 @@ public class autor {
         this.Nacionalidad = Nacionalidad;
     }
 
-    public String getAñoNacimiento() {
-        return añoNacimiento;
-    }
-
-    public void setAñoNacimiento(String añoNacimiento) {
-        this.añoNacimiento = añoNacimiento;
-    }
-    
-    
-    
 }

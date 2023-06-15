@@ -26,22 +26,29 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 
     </head>
-    <body>
+    <body style=" background: rgb(2,0,36);
+background: linear-gradient(159deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 69%, rgba(0,212,255,1) 100%); ">
 
         <nav class="navbar bg-dark fixed-top">
 
             <div class="container-fluid text-center">  
 
                 <li class="nav-item">
-                    <a class="btn btn-outline-light" aria-current="page" href="Controlador?signin=MiLibreria&accion=Listar"target="myframe">Mi libreria</a>
+                    <a class="btn btn-outline-light" aria-current="page" href="Controlador?signin=MiLibreria"target="myframe">Mi libreria</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-outline-light" href="Controlador?signin=BuscarLibro" target="myframe">Agregar Libro</a>
+                    <a class="btn btn-outline-light" href="Controlador?signin=AgregarLibro&accion=Listar" target="myframe">Agregar Libro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-light" href="Controlador?signin=VerLibros&accion=Listar" target="myframe">ver mis Libros</a>
                 </li>
 
-
                 <li class="nav-item">
-                    <a class="btn btn-outline-light" href="Controlador?signin=EscribirResena" target="myframe">Escribir Reseña</a>
+                    <a class="btn btn-outline-light" href="Controlador?signin=EscribirResena&accion=Listar" target="myframe">Escribir Reseña</a>
+                </li>
+                
+                                <li class="nav-item">
+                    <a class="btn btn-outline-light" href="Controlador?signin=VerResena" target="myframe">Ver Reseñas</a>
                 </li>
 
 
@@ -57,7 +64,7 @@
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="Controlador?signin=Perfil" target="myframe">Perfil</a>
+                                <a class="nav-link active" aria-current="page" href="Controlador?signin=Perfil&accion=Obtener" target="myframe">Perfil</a>
                             </li>
 
                             <form action="LogoutServlet" method="get">
@@ -73,15 +80,15 @@
 
 
 
-        <div class="m-4" style="height: 95vh; padding: 50px 10vw 0 10vw">
-            <iframe name="myframe" src="Perfil.jsp" style="height: 100%; width: 100%;
-                    border-width: 5px; border-style: solid; border-color: black">
-                
+        <div class="m-4 " style="height: 95vh; padding: 60px 11vw 0 11vw;">
+            <iframe class="border border-primary rounded " name="myframe" src="Controlador?signin=Perfil&accion=Obtener" style="height: 80vh; width: 78vw;
+                     ">
+
             </iframe>
         </div>
 
 
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     </body>
 </html>
