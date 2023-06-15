@@ -5,6 +5,7 @@ import com.libreriagradiente.DAO.libroDAO;
 import com.libreriagradiente.DAO.libroDeseoDAO;
 import com.libreriagradiente.DAO.libroLeidosDAO;
 import com.libreriagradiente.DAO.libroLeyendoDAO;
+import com.libreriagradiente.DAO.listarUsuarioDAO;
 import com.libreriagradiente.DAO.perfilDAO;
 import com.libreriagradiente.DAO.resenaDAO;
 import com.libreriagradiente.modelo.EstadoLectura;
@@ -38,6 +39,7 @@ public class Controlador extends HttpServlet {
     perfilDAO pdao = new perfilDAO();
     MiLibreriaDAO MilDAO = new MiLibreriaDAO();
     EstadoLectura Estl = new EstadoLectura();
+    listarUsuarioDAO lusdao = new listarUsuarioDAO();
 
     int idl;
     int idusu;
@@ -230,8 +232,6 @@ public class Controlador extends HttpServlet {
 
                 case "Delete":
                     idl = Integer.parseInt(request.getParameter("id"));
-                    System.out.println("el id es : " + request.getParameter("id"));
-                    //falta borrar la 
                     perfil p10 = new perfil();
                     pdao.obtenerDeBD(idusu, p10);
                     int idpe = p10.getId();
@@ -303,12 +303,61 @@ public class Controlador extends HttpServlet {
             perfil perfil = new perfil();
             pdao.obtenerDeBD(idusu, perfil);
             int idP = perfil.getId();
+            int deseo = MilDAO.cantidad(1, idP);
+            int leyendo =MilDAO.cantidad(2, idP);
+            int leido = MilDAO.cantidad(3, idP);
+            int m=perfil.getMeta();
+            int falt = m-leido;
+            double porce=0;
+            if(m!=0){
+            porce = (leido*100)/m;}
             
+            request.setAttribute("leyendo",leyendo);
+            request.setAttribute("leido",leido);
+            request.setAttribute("deseo",deseo);
+            request.setAttribute("f",falt);
+            request.setAttribute("p",porce);
+            System.out.println(leyendo);
+            System.out.println(leido);
+            System.out.println(deseo);
 
             
-
 
             request.getRequestDispatcher("MiLibreria.jsp").forward(request, response);
+        }
+
+        if (signin.equals("ListarUsuarios")) {
+
+            switch (accion) {
+                case "Listar":
+
+                    List listau = lusdao.listarUs();
+
+                    request.setAttribute("usuarios", listau);
+
+                    break;
+
+                case "Editar":
+
+                    idl = Integer.parseInt(request.getParameter("id"));
+
+                    lusdao.actualizarU(idl);
+
+                    System.out.println(idl);
+
+                    request.getRequestDispatcher("Controlador?signin=ListarUsuarios&accion=Listar").forward(request, response);
+
+                    break;
+                case "Eliminar":
+                    idl = Integer.parseInt(request.getParameter("id"));
+                    lusdao.eliminarU(idl);
+                    request.getRequestDispatcher("Controlador?signin=ListarUsuarios&accion=Listar").forward(request, response);
+
+                default:
+            }
+
+            request.getRequestDispatcher("ListarUsuarios.jsp").forward(request, response);
+
         }
 
     }

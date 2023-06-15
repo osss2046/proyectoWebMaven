@@ -18,9 +18,9 @@
     <style>
         body {
                 padding-top: 70px;
-    /* Resto del código CSS... */
-            background-color: #2c2c2c;
-            color: #ffffff;
+    background: rgb(2,0,36);
+    background: linear-gradient(159deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 69%, rgba(0,212,255,1) 100%);
+    color:whitesmoke;
         }
 
         .navbar, .navbar-brand, .nav-link {
@@ -68,7 +68,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="${loginLink}">Iniciar Sesión</a>
+                <a class="nav-link" href="login.jsp">Iniciar Sesión</a>
             </li>
         </ul>
     </div>
@@ -80,7 +80,8 @@
             <div class="col-lg-12 text-center">
                 <h1>Bienvenido a Gradiente</h1>
                 <p class="lead">Tu lugar favorito para administrar tus lecturas.</p>
-                <img src="img/fondo1.png" alt="libreria" class="img-fluid rounded-circle" style="height: 20vh;">
+                <br>
+                <img src="img/fondo1.jpeg" alt="libreria" class="img-fluid rounded-circle" style="height: 30vh;">
             </div>
         </div>
     </div>
@@ -88,8 +89,9 @@
 
 <div class="section" id="about">
     <div class="container">
-        <p class="mb-4">Te ayuda a administrar tus lecturas favoritas y crear una librería personalizada con tu lista de deseos.</p>
-        <p class="mb-4">Gradiente tiene una extensa lista de títulos y además cuenta con reseñas de la comunidad.</p>
+        <h5 class="mb-4 text-center">Te ayuda a administrar tus lecturas favoritas y crear una librería personalizada con tu lista de deseos.</h5>
+        <h5 class="mb-4 text-center">Puedes crear listas de lectura y además ver reseñas de la comunidad.</h5>
+        <br>
         <div class="text-center mt-4">
             <a href="login.jsp" class="btn btn-light btn-lg">Iniciar Sesión</a>
             <a href="Registration.jsp" class="btn btn-light btn-lg">Registrarse</a>
@@ -163,7 +165,7 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <h3 class="text-muted text-center">En esta caja de comentarios puedes contactarnos para hacer llegar tus impresiones
+                <h3 class=" text-center" style="color: black">En esta caja de comentarios puedes contactarnos para hacer llegar tus impresiones
                     <br> 
                     o si deseas contactarnos por cualquier razón. </h3>
   

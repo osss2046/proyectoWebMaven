@@ -7,6 +7,12 @@
         <title>Mi Librería</title>
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
         <style>
+                 
+            body{
+            background-color:whitesmoke ;
+            
+            }
+       
             .border-right {
                 border-right: 1px solid #000;
             }
@@ -24,7 +30,7 @@
                 <div class="col-md-4 p-3 border-right">
                     <h2 class="text-center">Lista de Deseos</h2>
                     <br>
-                    <a>Tienes : <b><% out.print(request.getAttribute("deseo")); %></b> Libros en tu lista de deseos</a>
+                    <h4>Tienes : <b><% out.print(request.getAttribute("deseo")); %></b> Libros en tu lista de deseos</h4>
                         
                  
 
@@ -33,13 +39,18 @@
                     <h2 class="text-center">Leyendo</h2>
                     <br>
 
-                    <a>Tienes : <b><% out.print(request.getAttribute("leyendo")); %></b> libros leyendo Actualmente </a>
+                    <h4>Tienes : <b><% out.print(request.getAttribute("leyendo")); %></b> libros leyendo Actualmente </h4>
 
                 </div>
                 <div class="col-md-4 p-3">
                     <h2 class="text-center">Leidos</h2>
                     <br>
-                    <a>LLevas : <b><% out.print(request.getAttribute("leido")); %></b> libros Leidos</a>
+                    <h4>LLevas : <b><% out.print(request.getAttribute("leido")); %></b> libros Leidos</h4>
+                    <br>
+                    <h4>Actualmente te faltan: <b><% out.print(request.getAttribute("f")); %></b> para completar tu meta</h4>
+                    <br>
+                    <h4>Has leido un <b> <% out.print(request.getAttribute("p")); %>  %</b>
+                         del total de libros que te has propuesto</h4>
 
 
                 </div>

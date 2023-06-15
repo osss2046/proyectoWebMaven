@@ -15,6 +15,13 @@
 
 
         <style>
+            
+                    
+            body{
+            background-color:whitesmoke ;
+            
+            }
+      
             .star {
                 color: #ccc;
                 cursor: pointer;

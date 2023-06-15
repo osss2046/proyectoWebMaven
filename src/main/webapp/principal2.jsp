@@ -26,7 +26,9 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 
     </head>
-    <body>
+    <body style=" background: rgb(2,0,36);
+background: linear-gradient(159deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 69%, rgba(0,212,255,1) 100%);">
+        
 
         <nav class="navbar bg-dark fixed-top">
 
@@ -38,22 +40,20 @@
                 <li class="nav-item">
                     <a class="btn btn-outline-light" href="Controlador?signin=AgregarLibro&accion=Listar" target="myframe">Agregar Libro</a>
                 </li>
-
-
                 <li class="nav-item">
-                    <a class="btn btn-outline-light" href="Controlador?signin=VerLibros&accion=Listar" target="myframe">Escribir Reseña</a>
+                    <a class="btn btn-outline-light" href="Controlador?signin=VerLibros&accion=Listar" target="myframe">ver mis Libros</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="btn btn-outline-light" href="Controlador?signin=EscribirResena&accion=Listar" target="myframe">Editar roles</a>
+                    <a class="btn btn-outline-light" href="Controlador?signin=EscribirResena&accion=Listar" target="myframe">Escribir Reseña</a>
                 </li>
-
-                <li class="nav-item">
+                
+                                <li class="nav-item">
                     <a class="btn btn-outline-light" href="Controlador?signin=VerResena" target="myframe">Ver Reseñas</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="btn btn-outline-light" href="Controlador?signin=VerResena" target="myframe">Lista Usuarios</a>
+                    <a class="btn btn-outline-light" href="Controlador?signin=ListarUsuarios&accion=Listar" target="myframe">Lista Usuarios</a>
                 </li>
 
 
@@ -81,9 +81,9 @@
             </div>
         </nav>
 
-        <div class="m-4" style="height: 80vh; padding-top: 50px">
-            <iframe name="myframe" src="Controlador?signin=Perfil&accion=Obtener" style="height: 100%; width: 100%;
-                    border-width: 5px; border-style: solid; border-color: black">
+        <div class="m-4" style="height: 95vh; padding: 60px 11vw 0 11vw">
+            <iframe class="border border-primary rounded " name="myframe" src="Controlador?signin=Perfil&accion=Obtener" style="height: 80vh; width: 78vw;
+                    ">
 
             </iframe>
         </div>

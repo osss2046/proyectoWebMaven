@@ -25,7 +25,7 @@
                 padding: 20px;
             }
             .profile-right {
-                background-color: #ffffff;
+                background-color: whitesmoke;
                 color: #000000;
                 height: 100vh;
                 <%-- Si deseas que ocupe toda la altura de la página  --%>
@@ -115,7 +115,7 @@
                             <h2 class="text-center">Descripción del Usuario</h2>
                             <br>
                             <br>
-                            <a class="col-lg-6 ">
+                            <h5>
                                 
                                 <%     
                                 if(request.getAttribute("desc")==null){
@@ -127,7 +127,7 @@
                                 %>
                                 
                             
-                            </a>
+                            </h5>
                             <br>
                             <br>
                         </div>
@@ -135,7 +135,7 @@
                             <h2 class="text-center">Generos favoritos</h2>
                             <br>
                             <br>
-                            <a class="col-lg-6 ">
+                            <h5>
                                                                 <%     
                                 if(request.getAttribute("gen")==null){
                                 out.print("Agrega tus generos favoritos");
@@ -152,7 +152,7 @@
                             
                             
                             
-                            </a>
+                            </h5>
                             <br>
                             <br>
                         </div>
@@ -160,7 +160,7 @@
                             <h2 class="text-center" >Preferencias de Lecturas</h2>
                             <br>
                             <br>
-                            <a class="col-lg-6 ">
+                            <h5 >
                                 
                                 <%     
                                 if(request.getAttribute("pref")==null){
@@ -174,7 +174,7 @@
                                 
                                 
                                 
-                                </a>
+                                </h5>
                             <br>
                             <br>
                         </div>

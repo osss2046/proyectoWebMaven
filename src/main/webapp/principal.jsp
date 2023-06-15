@@ -26,7 +26,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 
     </head>
-    <body>
+    <body style=" background: rgb(2,0,36);
+background: linear-gradient(159deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 69%, rgba(0,212,255,1) 100%); ">
 
         <nav class="navbar bg-dark fixed-top">
 
@@ -79,9 +80,9 @@
 
 
 
-        <div class="m-4" style="height: 95vh; padding: 50px 10vw 0 10vw">
-            <iframe name="myframe" src="Controlador?signin=Perfil&accion=Obtener" style="height: 100%; width: 100%;
-                    border-width: 5px; border-style: solid; border-color: black">
+        <div class="m-4 " style="height: 95vh; padding: 60px 11vw 0 11vw;">
+            <iframe class="border border-primary rounded " name="myframe" src="Controlador?signin=Perfil&accion=Obtener" style="height: 80vh; width: 78vw;
+                     ">
 
             </iframe>
         </div>
