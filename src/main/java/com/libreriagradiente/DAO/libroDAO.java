@@ -73,7 +73,7 @@ public class libroDAO {
 
     public List listarNue(int idPerfil) {
         String sql = "select l.id, l.nombreLibro, a.nombresAutor, a.Apellidos, l.Editorial,l.tema,.l.EstadoLectura from libro l, autor a, coleccion c where"
-                + " ( l.id=a.idLibro) and (c.idPerfil='" + idPerfil + "') and (l.id=c.idLibro)";
+                + " ( l.id=a.idLibro) and (c.idPerfil='" + idPerfil + "') and (l.id=c.idLibro) order by l.nombreLibro asc";
         List<libro> lista = new ArrayList<>();
         try {
             con = cn.Conexion();
@@ -343,6 +343,48 @@ public class libroDAO {
         }catch(Exception e){
             
         }
+    }
+    
+    
+        public List listartodo() {
+        String sql = "select l.id, l.nombreLibro, a.nombresAutor, a.Apellidos, l.Editorial,l.tema,.l.EstadoLectura from libro l, autor a, coleccion c where"
+                + " ( l.id=a.idLibro) and (l.id=c.idLibro) order by l.nombreLibro asc";
+        List<libro> lista = new ArrayList<>();
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                libro lib = new libro();
+
+                lib.setId(rs.getInt(1));
+                lib.setNombrelibro(rs.getString(2));
+                lib.setAutor(new autor());
+                lib.getAutor().setNombreAutor(rs.getString(3));
+                lib.getAutor().setApellidosAutor(rs.getString(4));
+                lib.setEditorial(rs.getString(5));
+                lib.setTema(rs.getString(6));
+                lib.setEstadoLectura(rs.getInt(7));
+
+                if (lib.getEstadoLectura() == 1) {
+                    lib.setEstale("Lista de Deseo");
+                }
+                if (lib.getEstadoLectura() == 2) {
+                    lib.setEstale("Leyendo");
+
+                }
+                if (lib.getEstadoLectura() == 3) {
+                    lib.setEstale("Leido");
+
+                }
+
+                lista.add(lib);
+            }
+        } catch (Exception e) {
+
+        }
+        return lista;
+
     }
 
 }

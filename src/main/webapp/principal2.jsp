@@ -55,6 +55,9 @@ background: linear-gradient(159deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 69%, rgba
                 <li class="nav-item">
                     <a class="btn btn-outline-light" href="Controlador?signin=ListarUsuarios&accion=Listar" target="myframe">Lista Usuarios</a>
                 </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-light" href="http://localhost:8080/LibreriaGradiente/api/libros">Todos los Libros</a>
+                </li>
 
 
                 <button class="navbar-toggler bg-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">

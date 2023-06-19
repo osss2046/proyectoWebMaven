@@ -19,6 +19,7 @@ import jakarta.servlet.http.HttpSession;
  *
  * @author Oscar
  */
+
 public class LoginServlet extends HttpServlet {
 
     usuariosDAO udao = new usuariosDAO();
@@ -78,7 +79,7 @@ public class LoginServlet extends HttpServlet {
 
             if (nombreUsuario != "" && password != "" && email != "" && password.equals(password2)) {
                 usuarios uss = udao.Registrar(us);
-                int idus = udao.crearPerfil(uss);
+                int idus = uss.getId();
                 udao.crearPerfil2(idus);
 
                 request.getRequestDispatcher("principal.jsp").forward(request, response);
