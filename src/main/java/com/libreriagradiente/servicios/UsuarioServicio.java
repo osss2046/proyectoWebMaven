@@ -1,3 +1,7 @@
+
+// Esta es la implementacion de la capa de servicio para los metodos del usuario
+
+
 package com.libreriagradiente.servicios;
 
 import com.libreriagradiente.DAO.usuariosDAO;
