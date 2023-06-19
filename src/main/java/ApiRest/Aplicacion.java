@@ -1,6 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ Esta es la Aplicacion de ApiRest, por lo tanto tiene la configuracion y los registros de los recuersos que seran presentados por la api
+
+
  */
 package ApiRest;
 

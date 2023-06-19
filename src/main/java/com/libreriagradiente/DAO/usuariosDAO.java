@@ -1,6 +1,6 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+Este codigo corresponde al DAO de usuarios por lo tanto tiene varios metodos que conectan la base de datos con controlador, estos metodos se describiran uno a uno
+
  */
 package com.libreriagradiente.DAO;
 
@@ -25,26 +25,10 @@ public class usuariosDAO {
     ResultSet rs;
     int i;
 
-//    public usuarios validar(String email, String pass){
-//        usuarios us = new usuarios();
-//        String sql="select * from usuarios where uemail=? and uppassword=?";
-//        try{
-//            con=cn.Conexion();
-//            ps=con.prepareStatement(sql);
-//            ps.setString(1,email);
-//            ps.setString(2, pass);
-//            rs=ps.executeQuery();
-//            while (rs.next()) {
-//                us.setEmail(rs.getString("uemail"));
-//                us.setPasswordU(rs.getString("uppassword"));
-//                us.setNombreU(rs.getString("nombreUsuario"));
-//            }
-//        }catch(Exception e){}
-//        return us;
-//    }
 
 
 
+// Este metodo permite verificar si el usuario ingresado esta en la base de datos
     public usuarios verificar(String email, String pass) {
         usuarios us = new usuarios();
         String sql = "SELECT U.id, R.nombre, U.nombreUsuario FROM usuarios U INNER JOIN rol R ON U.idRol = R.id WHERE U.uemail = '" + email + "' "
@@ -69,7 +53,7 @@ public class usuariosDAO {
 
         return us;
     }
-
+// Este metodo permite registrar un nuevo usuario en la base de datos
     public usuarios Registrar(usuarios us) {
 
         String sql = "insert into usuarios(nombreUsuario,uppassword,uemail,idRol) values(?,?,?,?)";
@@ -91,7 +75,7 @@ public class usuariosDAO {
     }
 
 
-
+// Este metodo permite crear un perfil para cada usuario registrado en la base de datos
     public int crearPerfil2(int id) {
         String sql2 = "insert into perfil(idUsuario) values(?)";
 

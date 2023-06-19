@@ -2,6 +2,9 @@
     Document   : EditarPerfil
     Created on : 07-jun-2023, 15:58:34
     Author     : Oscar
+
+
+    En esta jsp podemos editar el perfil del usuario, estos son los atributos del perfil tales como la cantidad de libros que se dispone como meta, etc.
 --%>
 
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>

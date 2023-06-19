@@ -2,6 +2,9 @@
     Document   : EscribirResena
     Created on : 31-may-2023, 0:53:43
     Author     : Oscar
+
+        En este jsp se pueden escribir reseñas, por lo tanto despliega un formulario para tomar los datos relevantes de una reseña el cual sera
+        enviado al controlador
 --%>
 <%@ taglib uri="jakarta.tags.core" prefix="x" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>

@@ -1,6 +1,6 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+Este codigo corresponde al DAO de listar Usuarios por lo tanto tiene varios metodos que conectan la base de datos con controlador, estos metodos se describiran uno a uno
+
  */
 package com.libreriagradiente.DAO;
 
@@ -27,6 +27,7 @@ public class listarUsuarioDAO {
     int r;
 
     //CRUD
+    // retorna una lista con los usuarios y los atributos id, nombreUsuario, uemail, idRol
     public List listarUs() {
         String sql = "select id, nombreUsuario, uemail, idRol from usuarios";
         List<usuarios> lista = new ArrayList<>();
@@ -58,7 +59,8 @@ public class listarUsuarioDAO {
         return lista;
 
     }
-
+// Actualiza los usuarios. Esto es solo accesible por el administrador y la actualizacion es para cambiar el rol del usario elegido por el admin para que este pueda ser admin.
+ 
     public void actualizarU(int id) {
         String sql = "update usuarios set idRol=1 where id="+id;
         usuarios us = new usuarios();
@@ -72,7 +74,7 @@ public class listarUsuarioDAO {
 
         }
     }
-    
+    // Este metodo puede eliminar un usuario y es accesible solo por el admin.
         public void eliminarU(int id) {
         String sql = "delete from usuarios where idLibro=" + id;
                 try {

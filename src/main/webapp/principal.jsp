@@ -1,4 +1,12 @@
+<%-- 
+    Document   : principal
+    Created on : 07-jun-2023, 15:58:34
+    Author     : Oscar
 
+
+    Esta es la vista que se presenta después de que un usuario realiza login, principalmente nos muestra la barra de navegacion con todas las opciones del usuario y 
+    en la pagina se despliega el perfil del usuario, en el caso de que sea un usuario nuevo, esta pagina solo tendra información predeterminada.
+--%>
 
 <%
         if(session.getAttribute("email")==null){

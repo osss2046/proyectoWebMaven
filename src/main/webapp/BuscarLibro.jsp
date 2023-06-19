@@ -8,6 +8,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    
+    <%-- Este jsp es la vista del la pagina para buscar libros, en este se despliega el formulario para poder buscar un libro el cual 
+    sera incorporado a las diferentes listas: deseo, leyendo o leido--%>
+    
+    
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Mi Libreria</title>

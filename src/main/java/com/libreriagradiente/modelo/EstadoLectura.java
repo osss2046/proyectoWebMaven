@@ -1,6 +1,5 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+Este es el codigo del Estado de lectura y tiene los atributos, el constructor vacio, el constructor completo y todos los getter y setter
  */
 package com.libreriagradiente.modelo;
 
