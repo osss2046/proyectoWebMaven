@@ -2,6 +2,8 @@
     Document   : VerLibros
     Created on : 07-jun-2023, 13:38:31
     Author     : Oscar
+
+    Este jsp despliega una lista con los libros que ha incluido el usuario a sus listas, se utiliza el ForEach para desplejar la lista
 --%>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

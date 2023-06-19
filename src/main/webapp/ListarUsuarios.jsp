@@ -2,6 +2,9 @@
     Document   : ListarUsuarios
     Created on : 15-jun-2023, 13:39:46
     Author     : Oscar
+
+
+    En este jsp se muestra la lista de Usuarios, esto solo esta disponible para ser observado por un Usuario con rol de Administrador
 --%>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 

@@ -2,7 +2,13 @@
     Document   : VerResena
     Created on : 07-jun-2023, 14:10:40
     Author     : Oscar
+
+
+    Igualmente que en VerLibro, en VerReseña se despliegan las reseñas de todos los usuarios, esto es usando un ForEach e incrustando codigo java en el jsp para
+    poder desplegar los atributos de las reseñas
 --%>
+
+    
 
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>

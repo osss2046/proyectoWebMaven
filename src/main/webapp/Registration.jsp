@@ -1,3 +1,13 @@
+<%-- 
+    Document   : Registration
+    Created on : 07-jun-2023, 15:58:34
+    Author     : Oscar
+
+
+    Este jsp muestra un formulario para que un usuario pueda registrarse
+--%>
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html>

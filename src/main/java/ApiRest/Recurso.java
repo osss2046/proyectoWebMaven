@@ -1,6 +1,5 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+En este recurso de la api solo despliega un mensaje por pantalla en html, esto es una prueba inicial de la apiRest
  */
 package ApiRest;
 

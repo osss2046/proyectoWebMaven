@@ -1,6 +1,6 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+    Este es el controlador especial para administrar los inicio de sesiones, si corresponden los datos entregados por el usuario permitira iniciar sesion
+
  */
 package com.libreriagradiente.controlador;
 

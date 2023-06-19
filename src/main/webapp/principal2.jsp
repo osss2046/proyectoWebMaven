@@ -1,4 +1,12 @@
+<%-- 
+    Document   : principal2
+    Created on : 10-jun-2023, 15:58:34
+    Author     : Oscar
 
+
+    Este es el jsp que se muestra después de que se haya logiado un usuario con rol de Administrador, por lo tanto la barra de navegacion desplegara más opciones 
+    que en el caso de usuario cliente. Estas otras opciones son desplegar la lista de usuarios y ver la lista completa de libros.
+--%>
 
 <%
         if(session.getAttribute("email")==null){

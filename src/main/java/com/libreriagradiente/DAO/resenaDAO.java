@@ -1,6 +1,6 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+Este codigo corresponde al DAO de Reseña por lo tanto tiene varios metodos que conectan la base de datos con controlador, estos metodos se describiran uno a uno
+
  */
 package com.libreriagradiente.DAO;
 
@@ -30,6 +30,7 @@ public class resenaDAO {
     int idc;
 
 //operaciones CRUD
+    //obtener el id de la coleccion para relacionarlo con la reseña
     public int OIdColec(int idL, int idP) {
         coleccion col = new coleccion();
         String sql = "select id from coleccion where idLibro = '" + idL + "' AND idPerfil = " + idP;
@@ -46,7 +47,7 @@ public class resenaDAO {
         }
         return col.getId();
     }
-
+// Metodo que permite listar las reseñas, esto es para luego poder desplegarlas
     public List listaRes() {
         String sql = "select r.id, r.fechaAgregada, r.calificacionLibro, r.Resena, l.nombreLibro, a.Apellidos, p.nickname from resena r, libro l, autor a, "
                 + "perfil p, coleccion c where r.idColeccion=c.id and c.idPerfil=p.id and a.idLibro=l.id and l.id=c.idLibro";
@@ -78,7 +79,7 @@ public class resenaDAO {
         return lista;
 
     }
-
+// Metodo que permite agregar una nueva reseña, por lo tanto se inserta en la BBDD
     public void AgregarR(resena res) {
         String sql = "insert into resena(Resena, calificacionLibro, idColeccion) values(?,?,?)";
         try {
@@ -98,99 +99,4 @@ public class resenaDAO {
 
 }
 
-//
-//    public List listar(){
-//        String sql="select * from libro";
-//        List<libro>lista=new ArrayList<>();
-//        try{
-//            con=cn.Conexion();
-//            ps=con.prepareStatement(sql);
-//            rs=ps.executeQuery();
-//            while(rs.next()){
-//                libro lib=new libro();
-//                lib.setId(rs.getInt(1));
-//                lib.setNombrelibro(rs.getString(2));
-//                lib.setEditorial(rs.getString(3));
-//                lib.setTema(rs.getString(4));
-//                lib.setIdiomaLibro(rs.getString(5));
-//         //       lib.setIdAutor(rs.getString(6));
-//                lista.add(lib);
-//            }
-//        }catch(Exception e){
-//            
-//        }
-//        return lista;
-//        
-//    }
-//    
-//    public int agregar(libro lib){
-//        String sql="insert into libro(nombreLibro, Editorial, tema, idiomaLibro, idAutor) value(?,?,?,?,?)";
-//        
-//        System.out.println("Sql: "+sql);
-//        System.out.println("nombre libro "+lib.getNombrelibro()+" "+lib.getEditorial()+" "+lib.getAutor()+" "+lib.getIdiomaLibro()+" "+lib.getTema());
-//        try{
-//            con=cn.Conexion();
-//            ps=con.prepareStatement(sql);
-//            
-//            
-//            ps.setString(1,lib.getNombrelibro());
-//            ps.setString(2,lib.getEditorial());
-//            ps.setString(3,lib.getTema());
-//            ps.setString(4,lib.getIdiomaLibro());
-//     //       ps.setString(5,lib.getAutor());
-//            ps.executeUpdate();
-//
-//            
-//        }catch(Exception e){
-//            
-//        }
-//        return r;
-//    }
-//    
-//    public libro listarId(int id){
-//        libro li=new libro();
-//        String sql="select * from libro where id="+id;
-//        try{
-//            con=cn.Conexion();
-//            ps=con.prepareStatement(sql);
-//            rs=ps.executeQuery();
-//            while(rs.next()){
-//                li.setNombrelibro(rs.getString(2));
-//                li.setEditorial(rs.getString(3));
-//                li.setTema(rs.getString(4));
-//                li.setIdiomaLibro(rs.getString(5));
-//       //         li.setIdAutor(rs.getString(6));
-//            }
-//        }catch(Exception e){
-//            
-//        }
-//        return li;
-//    }
-//    public int actualizar(libro lib){
-//                String sql="update libro set nombreLibro=?, Editorial=?, tema=?, idiomaLibro=?, idAutor=? where id=?";
-//        try{
-//            con=cn.Conexion();
-//            ps=con.prepareStatement(sql);
-//            
-//            ps.setString(1,lib.getNombrelibro());
-//            ps.setString(2,lib.getEditorial());
-//            ps.setString(3,lib.getTema());
-//            ps.setString(4,lib.getIdiomaLibro());
-//            ps.setInt(6,lib.getId());
-//            ps.executeUpdate();
-//        }catch(Exception e){
-//            
-//        }
-//        return r;
-//    }
-//    public void delete(int id){
-//        String sql="delete from libro where id="+id;
-//        try{
-//            con=cn.Conexion();
-//            ps=con.prepareStatement(sql);
-//            ps.executeUpdate();
-//        }catch(Exception e){
-//            
-//        }
-//    }
-//
+

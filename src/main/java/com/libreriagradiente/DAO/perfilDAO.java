@@ -1,6 +1,6 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+Este codigo corresponde al DAO de perfil por lo tanto tiene varios metodos que conectan la base de datos con controlador, estos metodos se describiran uno a uno
+
  */
 package com.libreriagradiente.DAO;
 
@@ -26,7 +26,7 @@ public class perfilDAO {
     PreparedStatement ps;
     ResultSet rs;
     int r;
-
+//Con este metodo se pueden actualizar los atributos del perfil por lo cual el usuario puede actualizar su perfil en cada momento
     public int actualizar(int id, perfil p) {
 
         String sql = "update perfil set nickname=?, Preferencia_de_Lecturas=?,"
@@ -47,7 +47,7 @@ public class perfilDAO {
         }
         return r;
     }
-
+// Con este metodo se puede obtener todos los atributos del perfil solo ingresando el id del perfil.
     public perfil obtenerDeBD(int id, perfil p) {
         String sql = "select * from perfil where idUsuario=" + id;
         try {

@@ -1,6 +1,5 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+Este codigo corresponde al DAO de libro por lo tanto tiene varios metodos que conectan la base de datos con controlador, estos metodos se describiran uno a uno
  */
 package com.libreriagradiente.DAO;
 
@@ -34,6 +33,7 @@ public class libroDAO {
 
 
 //operaciones CRUD
+    // devuelve una lista de libros que corresponden al perfil iniciado
     public List listar(int idPerfil) {
         String sql = "select * from libro l left join coleccion c on l.id=c.idLibro where idPerfil=" + idPerfil;
         List<libro> lista = new ArrayList<>();
@@ -70,7 +70,7 @@ public class libroDAO {
         return lista;
 
     }
-
+//devuelve una lista de libros y autores correspondiente al perfil iniciado
     public List listarNue(int idPerfil) {
         String sql = "select l.id, l.nombreLibro, a.nombresAutor, a.Apellidos, l.Editorial,l.tema,.l.EstadoLectura from libro l, autor a, coleccion c where"
                 + " ( l.id=a.idLibro) and (c.idPerfil='" + idPerfil + "') and (l.id=c.idLibro) order by l.nombreLibro asc";
@@ -111,7 +111,7 @@ public class libroDAO {
         return lista;
 
     }
-
+//Devuelve una lista de autores
     public List listarAu() {
         String sql = "select * from autor order by nombreLibro";
         List<autor> lista2 = new ArrayList<>();
@@ -134,7 +134,7 @@ public class libroDAO {
         return lista2;
 
     }
-
+//Devuelve un String como parametro para saber si el libro existe o no existe en la base de datos
     public String Existe(libro lib) {
         String sql = "SELECT nombreLibro from libro where nombreLibro= '"+lib.getNombrelibro()+"' " ;
         String para = null;
@@ -153,7 +153,7 @@ public class libroDAO {
         System.out.println(sql);
         return para;
     }
-
+// Inserta un libro en la base de datos con los atributos señalados en el metodo
     public libro agregar(libro lib) {
 
         String sql = "insert into libro(nombreLibro, Editorial, tema, idiomaLibro, EstadoLectura) value(?,?,?,?,?)";
@@ -174,7 +174,7 @@ public class libroDAO {
         }
         return lib;
     }
-
+// Devuelve un id de libro que debe corresponder al libro entregado como parametro
     public int idLibro(libro lib) {
 
         String sql = "select id FROM libro where nombreLibro = '" + lib.getNombrelibro() + "' "
@@ -192,7 +192,7 @@ public class libroDAO {
         }
         return lib.getId();
     }
-
+//Agrega un autor a la base de datos y para esto se le ingresa el autor a la base de datos y un id correspondiente al id del libro
     public autor agregarAu(int id, autor au) {
 
         String sql = "insert into autor(nombresAutor, Apellidos, Nacionalidad, idLibro) value(?,?,?,?)";
@@ -215,7 +215,7 @@ public class libroDAO {
         }
         return au;
     }
-
+// Crea una coleccion, esto es una tabla que contiene el id del libro y el id del perfil
     public coleccion CrearColeccion(int idLibro, int idPerfil) {
         coleccion col = new coleccion();
         String sql = "insert into coleccion(idLibro, idPerfil) values(?,?)";
@@ -235,7 +235,7 @@ public class libroDAO {
 
         return col;
     }
-
+// Entrega el libro dependiendo del id que se le entrega como parametro, busca en la BBDD y devuelve los atributos que corresponden a aquel libro
     public libro listarId(int id) {
         libro li = new libro();
         String sql = "select * from libro where id=" + id;
@@ -255,7 +255,7 @@ public class libroDAO {
         }
         return li;
     }
-
+// Entrega el autor dependiendo del id que se le entrega como parametro, busca en la BBDD y devuelve los atributos que corresponden a aquel libro
     public autor listarIdAu(int id) {
         autor au = new autor();
         String sql = "select * from autor where idLibro=" + id;
@@ -274,7 +274,7 @@ public class libroDAO {
         }
         return au;
     }
-
+//Actualiza los atributos de un libro si fuese el caso en que un usuario desea cambiar algun atributo.
     public libro actualizar(libro lib) {
         String sql = "update libro set nombreLibro=?, Editorial=?, tema=?, idiomaLibro=?, EstadoLectura=? where id=?";
         try {
@@ -294,7 +294,7 @@ public class libroDAO {
         }
         return lib;
     }
-
+//Actualiza los atributos del autor, si fuese el caso en que el usuario desee cambiar alguno de estos
     public int actualizarAu(int id, autor au) {
         String sql = "update autor set nombresAutor=?, Apellidos=?, Nacionalidad=? where idLibro=" + id;
         try {
@@ -311,7 +311,7 @@ public class libroDAO {
         }
         return r;
     }
-
+// Borra un autor con el id de este
     public void DeleteAuConIdLi(int id) {
         String sql = "delete from autor where idLibro=" + id;
         try {
@@ -322,7 +322,7 @@ public class libroDAO {
 
         }
     }
-
+// Borra un libro con el id de este
     public void delete(int id) {
         String sql = "delete from libro where id=" + id;
         try {
@@ -333,6 +333,7 @@ public class libroDAO {
 
         }
     }
+    // Borra una coleccion con el id de este
     public void DeleteCol(int id){
         String sql="delete from coleccion where id="+id;
         try{
@@ -345,7 +346,7 @@ public class libroDAO {
         }
     }
     
-    
+    // Lista todo los libros de la base de datos, esto es para que el administrador los pueda ver, sin importar la sesion. Este metodo solo es accesible al Admin.
         public List listartodo() {
         String sql = "select l.id, l.nombreLibro, a.nombresAutor, a.Apellidos, l.Editorial,l.tema,.l.EstadoLectura from libro l, autor a, coleccion c where"
                 + " ( l.id=a.idLibro) and (l.id=c.idLibro) order by l.nombreLibro asc";

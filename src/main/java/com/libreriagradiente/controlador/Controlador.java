@@ -1,3 +1,12 @@
+/*
+    Este es el controlador que administra todas las solicitudes y respuestas. Los action (formularios) enviaran al cada seccion del controlador y 
+    este enviara al DAO correspondiente para administrar todas los response y request
+
+ */
+
+
+
+
 package com.libreriagradiente.controlador;
 
 import com.libreriagradiente.DAO.MiLibreriaDAO;

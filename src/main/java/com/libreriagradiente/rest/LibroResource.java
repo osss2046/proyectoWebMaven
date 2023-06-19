@@ -1,6 +1,6 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+
+    Este es el apiRest para presentar un listado de todos los libros para el administrador, este se presenta utilizando json
  */
 package com.libreriagradiente.rest;
 

@@ -1,3 +1,15 @@
+<%-- 
+    Document   : MiLibreria
+    Created on : 07-jun-2023, 15:58:34
+    Author     : Oscar
+
+
+    En esta jsp se puede ver un sumario de las listas de lectura del perfil, este sumario muestra por ejemplo algunos datos interesantes como los 
+libros faltantes para alcanzar la meta
+--%>
+
+
+
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

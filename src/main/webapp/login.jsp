@@ -1,3 +1,12 @@
+
+<%-- 
+    Document   : Login
+    Created on : 07-jun-2023, 15:58:34
+    Author     : Oscar
+
+
+    En esta vista de jsp podemos logiarnos para iniciar sesion y poder usar las funciones del proyecto 
+--%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html>

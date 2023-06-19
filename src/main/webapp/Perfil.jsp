@@ -2,6 +2,9 @@
     Document   : Perfil
     Created on : 07-jun-2023, 5:08:43
     Author     : Oscar
+
+    Este jsp muestra los atributos que editamos en el jsp de EditarPerfil. En Perfil.jsp se presentan todos estos atributos considerando 
+    un diseño de dos columnas
 --%>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 

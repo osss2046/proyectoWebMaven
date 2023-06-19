@@ -1,3 +1,6 @@
+
+// Esta es la capa de servicios
+
 package com.libreriagradiente.servicios;
 
 import java.util.HashMap;

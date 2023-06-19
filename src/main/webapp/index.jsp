@@ -1,3 +1,13 @@
+<%-- 
+    Document   : Index
+    Created on : 07-jun-2023, 15:58:34
+    Author     : Oscar
+
+
+    Esta es la primera vista de la pagina, es el index.jsp el cual nos da una bienvenida y nos presenta lo que es el proyecto
+--%>
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

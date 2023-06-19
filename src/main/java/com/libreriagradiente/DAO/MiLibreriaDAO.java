@@ -1,6 +1,6 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ Este corresponde al DAO de MiLibreria, solo tiene un metodo el cual toma las cantidades de libros de cada lista (deseo,leido,leyendo) que son del perfil 
+que inicio sesion y luego retorna esta cantidad
  */
 package com.libreriagradiente.DAO;
 
