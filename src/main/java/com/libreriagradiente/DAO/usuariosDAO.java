@@ -6,12 +6,12 @@ package com.libreriagradiente.DAO;
 
 import com.libreriagradiente.Log.CrearLog;
 import com.libreriagradiente.conexion.Conexion;
-import com.libreriagradiente.modelo.perfil;
 import com.libreriagradiente.modelo.rol;
 import com.libreriagradiente.modelo.usuarios;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  *
@@ -45,7 +45,7 @@ public class usuariosDAO {
                 us.setNombreU(rs.getString("nombreUsuario"));
                 us.setPasswordU(pass);
             }
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
             System.out.println("Error de conexión Log - obtenerUsuario: " + ex.getMessage()); //Visualización del error por consola
             CrearLog.errorLog("Error de conexión Log - obtenerUsuario: " + ex.getMessage()); //Visualización del error a través de archivo Log
 
@@ -67,7 +67,7 @@ public class usuariosDAO {
             ps.setInt(4, 2);
             ps.executeUpdate();
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
 
         }
 
@@ -86,7 +86,7 @@ public class usuariosDAO {
             i=id;
             ps.executeUpdate();
 
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
             System.out.println("Error de conexión Log - obtenerUsuario: " + ex.getMessage()); //Visualización del error por consola
             CrearLog.errorLog("Error de conexión Log - obtenerUsuario: " + ex.getMessage()); //Visualización del error a través de archivo Log
         }

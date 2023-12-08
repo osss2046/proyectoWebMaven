@@ -13,6 +13,7 @@ import com.libreriagradiente.modelo.resena;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,8 +27,6 @@ public class resenaDAO {
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
-    int r;
-    int idc;
 
 //operaciones CRUD
     //obtener el id de la coleccion para relacionarlo con la reseña
@@ -42,7 +41,7 @@ public class resenaDAO {
             while (rs.next()) {
                 col.setId(rs.getInt(1));
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
 
         }
         return col.getId();
@@ -72,7 +71,7 @@ public class resenaDAO {
                 lista.add(res);
                 
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
 
         }
 
@@ -91,7 +90,7 @@ public class resenaDAO {
             ps.setInt(3, res.getIdColeccion());
             ps.executeUpdate();
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
 
         }
 
