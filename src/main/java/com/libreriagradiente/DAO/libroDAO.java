@@ -102,12 +102,15 @@ public class libroDAO {
                     lib.setEstale("Leido");
 
                 }
-
+                System.out.println("la siguiente es la lista que se deberia ver: ");
+                System.out.println(lib);
                 lista.add(lib);
             }
+            
         } catch (Exception e) {
 
         }
+        
         return lista;
 
     }
@@ -148,9 +151,8 @@ public class libroDAO {
         } catch (Exception e) {
 
         }
-        System.out.println("prueba33 :"+para);
+        System.out.println("si el libro no existe esto es nulo  :"+para);
         System.out.println(lib.getNombrelibro());
-        System.out.println(sql);
         return para;
     }
 // Inserta un libro en la base de datos con los atributos señalados en el metodo

@@ -25,27 +25,25 @@
                 height: 100vh;
                 <%-- 
     Si deseas que ocupe toda la altura de la página  --%>
-                padding: 20px;
+                padding: 20px 20px 0px 20px;
             }
             .profile-right {
                 background-color: whitesmoke;
                 color: #000000;
                 height: 100vh;
                 <%-- Si deseas que ocupe toda la altura de la página  --%>
-                padding: 20px;
+                padding: 20px 20px 0px 20px;
             }
         </style>
     </head>
     <body>
-            <div class="container-fluid h-100">
-                <div class="row h-100">
+            <div class="container-fluid">
+                <div class="row">
 
 
 
 
                     <div class="col-lg-3 profile-left">
-                        <br>
-                        <br>
                         <div class="text-center">
                             <img src="img/perfilDefault.jpeg" alt="libreria" class="img-fluid rounded-circle" style="height: 20vh;">
                             <p class="lead">Foto Perfil</p>   
@@ -53,12 +51,6 @@
                         <br>
                         <h2 class="text-center">Datos del Usuario</h2>
                         <br>
-
-
-
-
-
-
                         <a>Meta de lecturas este año:
                             <% 
                             
@@ -74,22 +66,16 @@
                
                             %>
  
-
-
                         </a>
                         <br>
                         <a>Nickname:
                                                    <% 
-                            out.print(request.getAttribute("Nick"));
+                            out.print(request.getAttribute("nick"));
                
                             %>
                         
                         </a>
                         <br>
-
-
-
-
                         <a>Correo: <%
                             HttpSession sesion=request.getSession();
                             String correo = (String)sesion.getAttribute("email");
@@ -99,44 +85,29 @@
 
                         <div class=" text-center">
                             <br>
-                            <br>
-                            <br>
-                            <br>
-
                             <a class="btn btn-outline-light" href="EditarPerfil.jsp" >Editar Perfil</a>
                         </div>
                     </div>
 
-
-
-
-
-
-
                     <div class="col-lg-9 profile-right">
-                        <div class="pb-3 mb-3 border-bottom">
+                        <div class="pb-2 mb-3 border-bottom">
                             <h2 class="text-center">Descripción del Usuario</h2>
                             <br>
-                            <br>
                             <h5>
-                                
                                 <%     
-                                if(request.getAttribute("desc")==null){
+                                if(request.getAttribute("descripcion")==null){
                                 out.print("Añade una descripcion tuya");
                                     }
-                                    else if(request.getAttribute("desc")!=null)
-                                    out.print(request.getAttribute("desc"));
+                                    else if(request.getAttribute("descripcion")!=null)
+                                    out.print(request.getAttribute("descripcion"));
                                 
                                 %>
                                 
-                            
                             </h5>
                             <br>
-                            <br>
                         </div>
-                        <div class="pb-3 mb-3 border-bottom">
+                        <div class="pb-2 mb-3 border-bottom">
                             <h2 class="text-center">Generos favoritos</h2>
-                            <br>
                             <br>
                             <h5>
                                                                 <%     
@@ -147,21 +118,11 @@
                                     out.print(request.getAttribute("gen"));
                                 
                                 %>
-                                
-                                
-                                
-                                
-                            
-                            
-                            
-                            
                             </h5>
-                            <br>
                             <br>
                         </div>
                         <div>
                             <h2 class="text-center" >Preferencias de Lecturas</h2>
-                            <br>
                             <br>
                             <h5 >
                                 
@@ -173,17 +134,11 @@
                                     out.print(request.getAttribute("pref"));
                                 
                                 %>
-                                
-                                
-                                
-                                
+
                                 </h5>
-                            <br>
                             <br>
                         </div>
                     </div>
-
-
 
                 </div>
             </div>

@@ -78,9 +78,9 @@ public class Controlador extends HttpServlet {
         if (signin.equals("AgregarLibro")) {
             switch (accion) {
                 case "Listar":
-                    perfil perfil = new perfil();
-                    pdao.obtenerDeBD(idusu, perfil);
-                    int idP = perfil.getId();
+                    perfil perfil1 = new perfil();
+                    pdao.obtenerDeBD(idusu, perfil1);
+                    int idP = perfil1.getId();
                     List lista = ldao.listar(idP);
                     request.setAttribute("libros", lista);
 
@@ -106,15 +106,15 @@ public class Controlador extends HttpServlet {
                     li.setTema(tema);
                     li.setIdiomaLibro(idioma);
                     String para = ldao.Existe(li);
-                    System.out.println("el nombre del libro parametro es : " + para);
+                    System.out.println("el nombre del libro parametro (si existe) es : " + para);
                     if (para == null) {
                         li = ldao.agregar(li);
                         int idLibro = ldao.idLibro(li);
 
                         au = ldao.agregarAu(idLibro, au);
-                        perfil pe = new perfil();
-                        pdao.obtenerDeBD(idusu, pe);
-                        int idPerfil = pe.getId();
+                        perfil perfil2 = new perfil();
+                        pdao.obtenerDeBD(idusu, perfil2);
+                        int idPerfil = perfil2.getId();
                         coleccion cole = new coleccion();
 
                         cole = ldao.CrearColeccion(idLibro, idPerfil);
@@ -186,24 +186,17 @@ public class Controlador extends HttpServlet {
 
                     break;
                 case "Obtener":
-                    perfil perfil = new perfil();
-                    pdao.obtenerDeBD(idusu, perfil);
+                    perfil perfil3 = new perfil();
+                    pdao.obtenerDeBD(idusu, perfil3);
 
-                    int meta = perfil.getMeta();
-                    String nickn = perfil.getNickname();
-                    String descrip = perfil.getDescripcionU();
-                    String generos = perfil.getGenerosFav();
-                    String prefe = perfil.getPreferenciasDeLec();
+                    System.out.println("el nickname es:"+perfil3.getNickname());
 
-                    System.out.println("la meta de kuko es : " + meta);
-
-                    request.setAttribute("pref", prefe);
-                    request.setAttribute("gen", generos);
-                    request.setAttribute("desc", descrip);
+                    request.setAttribute("pref", perfil3.getPreferenciasDeLec());
+                    request.setAttribute("gen", perfil3.getGenerosFav());
+                    request.setAttribute("descripcion", perfil3.getDescripcionU());
                     request.setAttribute("nom", nombreusu);
-                    request.setAttribute("met", meta);
-                    request.setAttribute("Nick", nickn);
-                    System.out.println("la meta es : " + meta);
+                    request.setAttribute("met", perfil3.getMeta());
+                    request.setAttribute("nick", perfil3.getNickname());
 
                     request.getRequestDispatcher("Perfil.jsp").forward(request, response);
                 default:
@@ -220,9 +213,9 @@ public class Controlador extends HttpServlet {
 
             switch (accion) {
                 case "Listar":
-                    perfil perfil = new perfil();
-                    pdao.obtenerDeBD(idusu, perfil);
-                    int idP = perfil.getId();
+                    perfil perfil4 = new perfil();
+                    pdao.obtenerDeBD(idusu, perfil4);
+                    int idP = perfil4.getId();
                     List lista = ldao.listarNue(idP);
 
                     request.setAttribute("libros", lista);
@@ -241,9 +234,9 @@ public class Controlador extends HttpServlet {
 
                 case "Delete":
                     idl = Integer.parseInt(request.getParameter("id"));
-                    perfil p10 = new perfil();
-                    pdao.obtenerDeBD(idusu, p10);
-                    int idpe = p10.getId();
+                    perfil perfil5 = new perfil();
+                    pdao.obtenerDeBD(idusu, perfil5);
+                    int idpe = perfil5.getId();
                     int idC = resDAO.OIdColec(idl, idpe);
                     ldao.DeleteCol(idC);
                     ldao.DeleteAuConIdLi(idl);
@@ -261,9 +254,9 @@ public class Controlador extends HttpServlet {
         if (signin.equals("EscribirResena")) {
             switch (accion) {
                 case "Listar":
-                    perfil perfil = new perfil();
-                    pdao.obtenerDeBD(idusu, perfil);
-                    int idPe = perfil.getId();
+                    perfil perfil6 = new perfil();
+                    pdao.obtenerDeBD(idusu, perfil6);
+                    int idPe = perfil6.getId();
                     List lista3 = ldao.listar(idPe);
                     request.setAttribute("libross", lista3);
                     request.getRequestDispatcher("Resena.jsp").forward(request, response);
@@ -271,9 +264,9 @@ public class Controlador extends HttpServlet {
                     break;
                 case "EnviarResena":
                     int idLi = Integer.parseInt(request.getParameter("idLibro"));
-                    perfil p10 = new perfil();
-                    pdao.obtenerDeBD(idusu, p10);
-                    int idP = p10.getId();
+                    perfil perfil7 = new perfil();
+                    pdao.obtenerDeBD(idusu, perfil7);
+                    int idP = perfil7.getId();
                     int idC = resDAO.OIdColec(idLi, idP);
 
                     System.out.println("id libro :" + idLi);
@@ -309,13 +302,13 @@ public class Controlador extends HttpServlet {
 
         }
         if (signin.equals("MiLibreria")) {
-            perfil perfil = new perfil();
-            pdao.obtenerDeBD(idusu, perfil);
-            int idP = perfil.getId();
+            perfil perfil8 = new perfil();
+            pdao.obtenerDeBD(idusu, perfil8);
+            int idP = perfil8.getId();
             int deseo = MilDAO.cantidad(1, idP);
             int leyendo =MilDAO.cantidad(2, idP);
             int leido = MilDAO.cantidad(3, idP);
-            int m=perfil.getMeta();
+            int m=perfil8.getMeta();
             int falt = m-leido;
             double porce=0;
             if(m!=0){

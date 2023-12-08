@@ -56,10 +56,10 @@ public class perfilDAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 p.setId(rs.getInt(1));
-                p.setNickname(rs.getString(3));
-                p.setPreferenciasDeLec(rs.getString(4));
-                p.setGenerosFav(rs.getString(5));
-                p.setDescripcionU(rs.getString(6));
+                p.setNickname(rs.getString(2));
+                p.setPreferenciasDeLec(rs.getString(3));
+                p.setGenerosFav(rs.getString(4));
+                p.setDescripcionU(rs.getString(5));
                 p.setMeta(rs.getInt(7));
             }
 
