@@ -27,6 +27,7 @@ El proyecto Gradiente está desarrollado en Java utilizando el patrón Modelo-Vi
 ## Bases de datos
 La base de datos esta realizada originalmente con Mysql/MariaDB usando XAMPP. Pero puede cambiar de base de datos a la preferencia.
 El script para MySQL o MariaDB es:
+<br>
 CREATE DATABASE IF NOT EXISTS LibreriaGradiente;
 USE LibreriaGradiente;
 
