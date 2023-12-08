@@ -30,8 +30,8 @@ El script para MySQL o MariaDB es:
 <br>
 <br>
 <br>
-CREATE DATABASE IF NOT EXISTS LibreriaGradiente;
-USE LibreriaGradiente;
+CREATE DATABASE IF NOT EXISTS proyectoportafolio;
+USE proyectoportafolio;
 
 CREATE TABLE IF NOT EXISTS Rol (
     id INT AUTO_INCREMENT PRIMARY KEY,
