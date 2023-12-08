@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS Resena (
     FOREIGN KEY (idColeccion) REFERENCES Coleccion(id)
 );
 
-#### Además para que funcione correctamente se debe la administración de roles se debe insertar los siguientes registros
+#### Además para que funcione correctamente la administración de roles se debe insertar los siguientes registros
 INSERT INTO rol (nombre) VALUES ('ADMINISTRADOR'), ('USUARIO') 
 
 
