@@ -28,6 +28,8 @@ El proyecto Gradiente está desarrollado en Java utilizando el patrón Modelo-Vi
 La base de datos esta realizada originalmente con Mysql/MariaDB usando XAMPP. Pero puede cambiar de base de datos a la preferencia.
 El script para MySQL o MariaDB es:
 <br>
+<br>
+<br>
 CREATE DATABASE IF NOT EXISTS LibreriaGradiente;
 USE LibreriaGradiente;
 
@@ -91,7 +93,7 @@ CREATE TABLE IF NOT EXISTS Resena (
     FOREIGN KEY (idColeccion) REFERENCES Coleccion(id)
 );
 
-### Además para que funcione correctamente se debe la administración de roles se debe insertar los siguientes registros
+#### Además para que funcione correctamente se debe la administración de roles se debe insertar los siguientes registros
 INSERT INTO rol (nombre) VALUES ('ADMINISTRADOR'), ('USUARIO') 
 
 
